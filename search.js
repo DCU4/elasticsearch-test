@@ -1,5 +1,5 @@
 const client = require('./connection.js');
-
+// get all data from Room 1
 client.search({  
   index: 'user',
   body: {
@@ -14,9 +14,9 @@ client.search({
       console.log("search error: "+error)
     }
     else {
-      console.log("--- Response ---");
+      console.log("--- response ---");
       console.log(response.body);
-      console.log("--- Hits ---");
+      console.log("--- messages ---");
       response.body.hits.hits.forEach(function(hit){
         console.log(hit._source.rooms[0].messages);
       })
